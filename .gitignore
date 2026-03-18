@@ -25,3 +25,8 @@ outputs/
 
 # Streamlit
 .streamlit/secrets.toml
+
+*.pt
+*.pth
+.DS_Store
+Thumbs.db
