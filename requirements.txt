@@ -12,3 +12,4 @@ tqdm>=4.66
 streamlit>=1.30
 grad-cam>=1.4.8
 python-dotenv>=1.0
+-e .
