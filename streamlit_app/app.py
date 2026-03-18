@@ -4,7 +4,15 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.append(str(ROOT / "src"))
+SRC_PATH = ROOT / "src"
+
+if str(SRC_PATH) not in sys.path:
+    sys.path.insert(0, str(SRC_PATH))
+
+from aigenerated_detector.config import DEFAULT_MODEL_NAME, InferenceConfig, Thresholds
+from aigenerated_detector.explainability.gradcam import compute_gradcam
+from aigenerated_detector.inference.predict_image import predict_image
+from aigenerated_detector.inference.predict_video import predict_video
 
 import tempfile
 from pathlib import Path
@@ -13,10 +21,7 @@ import numpy as np
 import streamlit as st
 import torch
 
-from aigenerated_detector.config import DEFAULT_MODEL_NAME, InferenceConfig, Thresholds
-from aigenerated_detector.explainability.gradcam import compute_gradcam
-from aigenerated_detector.inference.predict_image import predict_image
-from aigenerated_detector.inference.predict_video import predict_video
+
 
 
 st.set_page_config(page_title="Deepfake Detector + Grad-CAM", layout="wide")
