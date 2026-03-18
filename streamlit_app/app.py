@@ -6,9 +6,13 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SRC = ROOT / "src"
 
-if str(SRC) not in sys.path:
-    sys.path.insert(0, str(SRC))
+sys.path.insert(0, str(SRC))
 
+# 🔥 DEBUG (temporary)
+print("ROOT:", ROOT)
+print("SRC:", SRC)
+print("SRC exists:", SRC.exists())
+print("SRC contents:", list(SRC.iterdir()))
 
 from aigenerated_detector.config import DEFAULT_MODEL_NAME, InferenceConfig, Thresholds
 from aigenerated_detector.explainability.gradcam import compute_gradcam
