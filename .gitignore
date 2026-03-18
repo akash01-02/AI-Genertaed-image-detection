@@ -6,27 +6,34 @@ __pycache__/
 *.egg-info/
 dist/
 build/
+
 .venv/
 venv/
 env/
+
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
+
 .idea/
 .vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
 
 # Data / outputs
 data/
 !data/.gitkeep
+
 checkpoints/
 !checkpoints/.gitkeep
+
 outputs/
 !outputs/.gitkeep
 
 # Streamlit
 .streamlit/secrets.toml
 
-*.pt
+# Models (optional, but keep .pt allowed for deployment)
 *.pth
-.DS_Store
-Thumbs.db
