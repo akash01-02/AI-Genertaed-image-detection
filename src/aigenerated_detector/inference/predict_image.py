@@ -8,7 +8,7 @@ import torch
 from PIL import Image
 
 from aigenerated_detector.config import InferenceConfig
-from aigenerated_detector.data.transforms import build_eval_transforms
+from ..data.transforms import build_eval_transforms
 from aigenerated_detector.models.image_classifier import ImageBinaryClassifier, load_checkpoint
 from aigenerated_detector.utils.device import get_device
 
